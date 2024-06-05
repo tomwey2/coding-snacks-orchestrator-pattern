@@ -14,7 +14,7 @@ public class Orchestrator {
         try {
             task.execute((T) context);
         } catch(ClassCastException e) {
-            System.out.println("Error: " + e);
+            throw new RuntimeException(e);
         }
         return this;
     }
